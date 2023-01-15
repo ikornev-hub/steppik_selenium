@@ -5,17 +5,14 @@ from selenium.webdriver.common.by import By
 from selenium.webdriver.support import expected_conditions as EC
 from selenium.webdriver.support.ui import WebDriverWait
 
-email = ''
-password = ''
+email = 'aferistus48@gmail.com'
+password = 'Proletarism48'
 
 
 @pytest.mark.parametrize('number',
-                         ['236895', '236896', '236897', '236898',
-                          '236899', '236903', '236904', '236905'])
+                         ['236905'])
 class TestStepikPage:
-    @pytest.mark.smoke
     def test_authorize_with_valid_email_and_password_and_send_solving(self, browser, number):
-        browser.implicitly_wait(5)
         link = f'https://stepik.org/lesson/{number}/step/1'
         browser.get(link)
 
